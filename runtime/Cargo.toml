@@ -56,6 +56,14 @@ frame-benchmarking = { optional = true, workspace = true }
 frame-system-benchmarking = { optional = true, workspace = true }
 pallet-template.workspace = true
 
+[dependencies.pallet-staking]
+default-features = false
+path = "../substrate/frame/staking"
+
+[dependencies.pallet-contracts]
+default-features = false
+path = "../substrate/frame/contracts"
+
 [build-dependencies]
 substrate-wasm-builder = { optional = true, workspace = true, default-features = true }
 
@@ -96,6 +104,8 @@ std = [
 	"sp-transaction-pool/std",
 	"sp-version/std",
 	"substrate-wasm-builder",
+	"pallet-staking/std",
+	"pallet-contracts/std",
 ]
 
 runtime-benchmarks = [
